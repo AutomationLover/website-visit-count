@@ -2,9 +2,11 @@ from flask import Flask
 from redis import Redis
 
 app = Flask(__name__)
-redis = Redis(host='redis', port=6379)
-
+redis = Redis(host='127.0.0.1', port=6379)
 @app.route('/')
+def helloworld():
+    return "Hello World"
+@app.route('/hit')
 def hello():
     redis.incr('hits')
     counter = str(redis.get('hits'),'utf-8')
