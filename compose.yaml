@@ -12,7 +12,7 @@ services:
     # stop_signal: SIGINT
     ports:
       - '8000:8000'
-#    volumes:
-#      - .:/code
+    volumes:
+      - .:/code
     depends_on:
       - redis
