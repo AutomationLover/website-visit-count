@@ -13,6 +13,6 @@ services:
     ports:
       - '8000:8000'
     volumes:
-      - .:/code
+      - .:/code  # With volumes: Essential for development (live editing, hot reloading)
     depends_on:
       - redis
